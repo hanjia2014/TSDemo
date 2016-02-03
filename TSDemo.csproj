@@ -332,8 +332,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\demoApp\interfaces\" />
-    <Folder Include="Scripts\demoApp\services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -347,10 +345,12 @@
     <TypeScriptCompile Include="Scripts\demoApp\app.ts" />
     <TypeScriptCompile Include="Scripts\demoApp\controllers\BaseController.ts" />
     <TypeScriptCompile Include="Scripts\demoApp\controllers\HomeController.ts" />
+    <TypeScriptCompile Include="Scripts\demoApp\interfaces\IRepositoryService.ts" />
     <TypeScriptCompile Include="Scripts\demoApp\models\Company.ts" />
     <TypeScriptCompile Include="Scripts\demoApp\models\Employee.ts" />
     <TypeScriptCompile Include="Scripts\demoApp\scopes\IBaseScope.ts" />
     <TypeScriptCompile Include="Scripts\demoApp\scopes\IHomeScope.ts" />
+    <TypeScriptCompile Include="Scripts\demoApp\services\RepositoryService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
