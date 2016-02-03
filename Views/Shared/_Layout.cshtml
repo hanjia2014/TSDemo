@@ -8,7 +8,12 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body data-ng-app="demoApp">
+    <div data-ng-controller="DemoApp.Controllers.HomeController as homeController">
+        {{Message}}
+        <br />
+        {{homeController.Message}}
+    </div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -39,6 +44,9 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angularjs")
     @RenderSection("Scripts", required: false)
+    <script src="~/Scripts/demoApp/app.js"></script>
+    <script src="~/Scripts/demoApp/controllers/HomeController.js"></script>
 </body>
 </html>
