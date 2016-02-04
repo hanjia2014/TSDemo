@@ -13,6 +13,8 @@
         {{Message}}
         <br />
         {{homeController.Message}}
+        <br />
+        {{Companies.length}}
     </div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -47,6 +49,8 @@
     @Scripts.Render("~/bundles/angularjs")
     @RenderSection("Scripts", required: false)
     <script src="~/Scripts/demoApp/app.js"></script>
+    <script src="~/Scripts/demoApp/services/RepositoryService.js"></script>
     <script src="~/Scripts/demoApp/controllers/HomeController.js"></script>
+    
 </body>
 </html>

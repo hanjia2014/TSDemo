@@ -2,6 +2,6 @@
     import Models = DemoApp.Models;
 
     export interface IHomeScope extends IBaseScope {
-        Company: Models.Company;
+        Companies: Array<Models.Company>;
     }
 }
