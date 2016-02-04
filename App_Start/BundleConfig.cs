@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace TSDemo
 {
@@ -41,6 +38,11 @@ namespace TSDemo
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
                 "~/Scripts/angular.js",
                 "~/Scripts/angular.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/appjs").Include(
+                "~/Scripts/demoApp/app.js",
+                "~/Scripts/demoApp/services/RepositoryService.js",
+                "~/Scripts/demoApp/controllers/HomeController.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                  "~/Content/bootstrap.css",
