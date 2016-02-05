@@ -5,7 +5,6 @@ using System.Web.Mvc;
 
 namespace TSDemo.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
