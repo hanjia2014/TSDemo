@@ -39,6 +39,9 @@ namespace TSDemo
                 "~/Scripts/angular.js",
                 "~/Scripts/angular.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/signalr").Include(
+                "~/Scripts/jquery.signalR-2.2.0.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/appjs").Include(
                 "~/Scripts/demoApp/app.js",
                 "~/Scripts/demoApp/services/RepositoryService.js",
