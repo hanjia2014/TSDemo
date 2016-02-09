@@ -3,11 +3,16 @@ using TSDemo.Models;
 
 namespace TSDemo.Hubs
 {
-    public class DemoAppHub : Hub
+    public class DemoAppHub : Hub<IDemoAppHub>
     {
         public void CreateEmployee(Employee employee)
         {
-            Clients.All.createEmployee(employee);
+            Clients.All.UpdateEmployeeList (employee);
         }
+    }
+
+    public interface IDemoAppHub
+    {
+        void UpdateEmployeeList(Employee employee);
     }
 }

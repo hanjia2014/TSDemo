@@ -1,7 +1,8 @@
 ﻿module DemoApp.Controllers {
-    export class HomeController {
+    export class HomeController extends BaseController {
         static $inject = ['$scope', 'DemoApp.Services.RepositoryService', '$q', 'demoAppHub'];
         constructor(private $scope: DemoApp.Scopes.IHomeScope, private repositoryService: DemoApp.Services.RepositoryService, private $q: ng.IQService, private demoAppHub) {
+            super();
             this.$scope.Message = "Hello from scope";
             this.Message = "Hello from home controller";
 
@@ -10,9 +11,8 @@
             })]);
 
             this.demoAppHub.client.createEmployee = (employee: Models.Employee) => {
-                
                 this.$scope.$apply(() => {
-                    
+                    this.$scope.Employees.push(employee);
                 });
             };
         }

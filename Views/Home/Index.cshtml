@@ -1,3 +1,16 @@
-﻿@section SPAViews {
-    @Html.Partial("_Home")
-}
+﻿<div data-ng-controller="DemoApp.Controllers.HomeController as homeController">
+    {{Message}}
+    <br />
+    {{homeController.Message}}
+    <br />
+    {{Companies.length}}
+    @section SPAViews {
+        @Html.Partial("_Home")
+    }
+    <div data-ng-repeat="company in Companies">
+        {{company.name}}
+        <div data-ng-repeat="employee in company.employees">
+            {{employee.name}}
+        </div>
+    </div>
+</div>

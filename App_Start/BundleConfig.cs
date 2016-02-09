@@ -45,6 +45,7 @@ namespace TSDemo
             bundles.Add(new ScriptBundle("~/bundles/appjs").Include(
                 "~/Scripts/demoApp/app.js",
                 "~/Scripts/demoApp/services/RepositoryService.js",
+                "~/Scripts/demoApp/controllers/BaseController.js",
                 "~/Scripts/demoApp/controllers/HomeController.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
