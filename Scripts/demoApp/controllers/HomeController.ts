@@ -28,14 +28,12 @@
         addEmployee = () => {
             var employee = new Models.Employee;
             employee.Name = this.E_Name;
-            employee.Age = this.E_Age;
             employee.CompanyId = this.E_CompanyId;
             this.demoAppHub.server.createEmployee(employee);
         };
 
         public Message: string;
         public E_Name: string;
-        public E_Age: number;
         public E_CompanyId: number;
     }
 

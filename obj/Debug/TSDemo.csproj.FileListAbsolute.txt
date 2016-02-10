@@ -78,3 +78,4 @@ C:\Projects\TSDemo\TSDemo\bin\System.Web.WebPages.Deployment.xml
 C:\Projects\TSDemo\TSDemo\bin\System.Web.WebPages.Razor.xml
 C:\Projects\TSDemo\TSDemo\obj\Debug\TSDemo.dll
 C:\Projects\TSDemo\TSDemo\obj\Debug\TSDemo.pdb
+C:\Projects\TSDemo\TSDemo\obj\Debug\TSDemo.csprojResolveAssemblyReference.cache
