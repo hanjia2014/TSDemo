@@ -1,4 +1,4 @@
-﻿<div data-ng-controller="DemoApp.Controllers.HomeController as homeController">
+﻿<div ng-controller="DemoApp.Controllers.HomeController as homeController">
     {{Message}}
     <br />
     {{homeController.Message}}
@@ -7,18 +7,22 @@
     @section SPAViews {
         @Html.Partial("_Home")
     }
-    <div data-ng-repeat="company in Companies">
+    <div ng-repeat="company in Companies">
         {{company.name}}
-        <div data-ng-repeat="employee in company.employees">
+        <div ng-repeat="employee in company.employees">
             {{employee.name}}
         </div>
     </div>
 
     <ul></ul>
-    <input data-ng-model="homeController.E_Name" placeholder="Name" />
-    <select data-ng-model="homeController.E_CompanyId">
-        <option data-ng-repeat="company in Companies" value="{{company.id}}">{{company.name}}</option>
+    <input ng-model="homeController.E_Name" placeholder="Name" />
+    <select ng-model="homeController.E_CompanyId">
+        <option ng-repeat="company in Companies" value="{{company.id}}">{{company.name}}</option>
     </select>
 
-    <button data-ng-click="homeController.addEmployee()">Add</button>
+    <button ng-click="homeController.addEmployee()">Add</button>
+
+    <div class="jumbotron" ng-show="homeController.NewEmployee != null">
+        {{homeController.NewEmployee.Name}}
+    </div>
 </div>

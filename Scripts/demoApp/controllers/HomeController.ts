@@ -12,15 +12,15 @@
 
             this.demoAppHub.client.updateEmployeeList = (employee: Models.Employee) => {
                 this.$scope.$apply(() => {
-                    for (var i = 0; i < this.$scope.Companies.length; i++) {
-                        var company: any;
-                        company = this.$scope.Companies[i];
-                        if (company.id === employee.CompanyId) {
-                            employee.Id = company.employees.length;
-                            company.employees.push(employee);
-                            alert(employee.Name + ' has been added');
-                        }
-                    }
+                    this.NewEmployee = employee;
+                    //for (var i = 0; i < this.$scope.Companies.length; i++) {
+                    //    var company: any;
+                    //    company = this.$scope.Companies[i];
+                    //    if (company.id === employee.CompanyId) {
+                    //        employee.Id = company.employees.length;
+                    //        company.employees.push(employee);
+                    //    }
+                    //}
                 });
             };
         };
@@ -35,6 +35,7 @@
         public Message: string;
         public E_Name: string;
         public E_CompanyId: number;
+        public NewEmployee: Models.Employee;
     }
 
     angular.module("demoApp").controller("DemoApp.Controllers.HomeController", HomeController);
