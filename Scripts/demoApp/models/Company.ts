@@ -1,8 +1,9 @@
 ﻿module DemoApp.Models {
-    export class Company {
-        public Id: number;
-        public Name: string;
+    export class Company extends BaseModel implements Interfaces.IHasName {
         public Address: string;
         public Employees: Array<Employee>;
+        public getName = () => {
+            return this.Name + " located at " + this.Address;
+        };
     }
 }

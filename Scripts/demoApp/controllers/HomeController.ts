@@ -5,22 +5,15 @@
             super();
             this.$scope.Message = "Hello from scope";
             this.Message = "Hello from home controller";
-            this.$scope.Companies = new Array<Models.Company>();
+            this.$scope.companies = new Array<Models.Company>();
             this.$q.all([this.repositoryService.FetchCompaniesPromise().then((result: any) => {
-                this.$scope.Companies = result.data;
+                this.$scope.companies = result.data;
             })]);
 
             this.demoAppHub.client.updateEmployeeList = (employee: Models.Employee) => {
                 this.$scope.$apply(() => {
-                    this.NewEmployee = employee;
-                    //for (var i = 0; i < this.$scope.Companies.length; i++) {
-                    //    var company: any;
-                    //    company = this.$scope.Companies[i];
-                    //    if (company.id === employee.CompanyId) {
-                    //        employee.Id = company.employees.length;
-                    //        company.employees.push(employee);
-                    //    }
-                    //}
+                    var viewEmployee = new Models.ViewEntity<Models.Employee>(employee);
+                    this.newEntityName = viewEmployee.getName();
                 });
             };
         };
@@ -35,7 +28,7 @@
         public Message: string;
         public E_Name: string;
         public E_CompanyId: number;
-        public NewEmployee: Models.Employee;
+        public newEntityName: string;
     }
 
     angular.module("demoApp").controller("DemoApp.Controllers.HomeController", HomeController);

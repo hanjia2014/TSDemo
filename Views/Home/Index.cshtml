@@ -3,11 +3,8 @@
     <br />
     {{homeController.Message}}
     <br />
-    {{Companies.length}}
-    @section SPAViews {
-        @Html.Partial("_Home")
-    }
-    <div ng-repeat="company in Companies">
+    {{companies.length}}
+    <div ng-repeat="company in companies">
         {{company.name}}
         <div ng-repeat="employee in company.employees">
             {{employee.name}}
@@ -17,12 +14,12 @@
     <ul></ul>
     <input ng-model="homeController.E_Name" placeholder="Name" />
     <select ng-model="homeController.E_CompanyId">
-        <option ng-repeat="company in Companies" value="{{company.id}}">{{company.name}}</option>
+        <option ng-repeat="company in companies" value="{{company.id}}">{{company.name}}</option>
     </select>
 
     <button ng-click="homeController.addEmployee()">Add</button>
 
-    <div class="jumbotron" ng-show="homeController.NewEmployee != null">
-        {{homeController.NewEmployee.Name}}
+    <div class="jumbotron" ng-show="homeController.newEntityName != null && homeController.newEntityName != ''">
+        {{homeController.newEntityName}}
     </div>
 </div>

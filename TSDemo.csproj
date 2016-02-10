@@ -350,7 +350,10 @@
     <TypeScriptCompile Include="Scripts\demoApp\controllers\BaseController.ts" />
     <TypeScriptCompile Include="Scripts\demoApp\controllers\HomeController.ts" />
     <TypeScriptCompile Include="Scripts\demoApp\hubs\Hubs.d.ts" />
+    <TypeScriptCompile Include="Scripts\demoApp\interfaces\IHasName.ts" />
     <TypeScriptCompile Include="Scripts\demoApp\interfaces\IRepositoryService.ts" />
+    <TypeScriptCompile Include="Scripts\demoApp\models\BaseModel.ts" />
+    <TypeScriptCompile Include="Scripts\demoApp\models\ViewEntity.ts" />
     <TypeScriptCompile Include="Scripts\demoApp\models\Company.ts" />
     <TypeScriptCompile Include="Scripts\demoApp\models\Employee.ts" />
     <TypeScriptCompile Include="Scripts\demoApp\scopes\IBaseScope.ts" />
