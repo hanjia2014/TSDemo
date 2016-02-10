@@ -43,6 +43,8 @@ namespace TSDemo
                 "~/Scripts/jquery.signalR-2.2.0.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/appjs").Include(
+                "~/Scripts/demoApp/models/Employee.js",
+                "~/Scripts/demoApp/models/Company.js",
                 "~/Scripts/demoApp/app.js",
                 "~/Scripts/demoApp/services/RepositoryService.js",
                 "~/Scripts/demoApp/controllers/BaseController.js",
