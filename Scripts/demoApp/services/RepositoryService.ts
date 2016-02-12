@@ -6,7 +6,7 @@
         constructor(private $http: ng.IHttpService, private $q: ng.IQService, private $location: ng.ILocationService) {
 
         }
-        FetchCompaniesPromise = () => {
+        FetchCompaniesPromiseAsync = () => {
             var deferred = this.$q.defer();
             this.$http.get('/api/company').then(function (result) {
                 deferred.resolve(result);

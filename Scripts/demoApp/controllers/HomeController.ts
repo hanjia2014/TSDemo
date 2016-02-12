@@ -6,7 +6,7 @@
             this.$scope.Message = "Hello from scope";
             this.Message = "Hello from home controller";
             this.$scope.companies = new Array<Models.Company>();
-            this.$q.all([this.repositoryService.FetchCompaniesPromise().then((result: any) => {
+            this.$q.all([this.repositoryService.FetchCompaniesPromiseAsync().then((result: any) => {
                 this.$scope.companies = result.data;
             })]);
 
