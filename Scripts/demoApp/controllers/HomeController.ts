@@ -12,16 +12,15 @@
 
             this.demoAppHub.client.updateEmployeeList = (employee: Models.Employee) => {
                 this.$scope.$apply(() => {
-                    this.$q.all([this.repositoryService.FetchCompaniesPromise().then((result: any) => {
-                        var companies = result.data;
-                        var company_name;
-                        for (var i = 0; i < companies.length; i++) {
-                            if (companies[i].id == employee.CompanyId)
-                                company_name = companies[i].name;
+                    for (var i = 0; i < this.$scope.companies.length; i++) {
+                        var company: any;
+                        company = this.$scope.companies[i];
+
+                        if (company.id == employee.CompanyId) {
+                            var viewEmployee = new Models.ViewEntity<Models.Employee>(employee);
+                            this.newEntityName = viewEmployee.getName() + " - " + company.name;
                         }
-                        var viewEmployee = new Models.ViewEntity<Models.Employee>(employee);
-                        this.newEntityName = viewEmployee.getName() + " - " + company_name;
-                    })]);
+                    }
                 });
             };
         };
