@@ -6,14 +6,22 @@
             this.$scope.Message = "Hello from scope";
             this.Message = "Hello from home controller";
             this.$scope.companies = new Array<Models.Company>();
-            this.$q.all([this.repositoryService.FetchCompaniesPromiseAsync().then((result: any) => {
+            this.$q.all([this.repositoryService.FetchCompaniesPromise().then((result: any) => {
                 this.$scope.companies = result.data;
             })]);
 
             this.demoAppHub.client.updateEmployeeList = (employee: Models.Employee) => {
                 this.$scope.$apply(() => {
-                    var viewEmployee = new Models.ViewEntity<Models.Employee>(employee);
-                    this.newEntityName = viewEmployee.getName();
+                    this.$q.all([this.repositoryService.FetchCompaniesPromise().then((result: any) => {
+                        var companies = result.data;
+                        var company_name;
+                        for (var i = 0; i < companies.length; i++) {
+                            if (companies[i].id == employee.CompanyId)
+                                company_name = companies[i].name;
+                        }
+                        var viewEmployee = new Models.ViewEntity<Models.Employee>(employee);
+                        this.newEntityName = viewEmployee.getName() + " - " + company_name;
+                    })]);
                 });
             };
         };

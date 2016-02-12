@@ -6,7 +6,7 @@
         constructor(private $http: ng.IHttpService, private $q: ng.IQService, private $location: ng.ILocationService) {
 
         }
-        FetchCompaniesPromiseAsync = () => {
+        FetchCompaniesPromise = () => {
             var deferred = this.$q.defer();
             this.$http.get('/api/company').then(function (result) {
                 deferred.resolve(result);
@@ -14,7 +14,7 @@
                 deferred.reject(error);
             });
             return deferred.promise;
-        }
+        };
     }
     angular.module("demoApp").service("DemoApp.Services.RepositoryService", RepositoryService);
 }
