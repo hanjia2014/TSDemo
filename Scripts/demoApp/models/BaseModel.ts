@@ -1,5 +1,5 @@
 ﻿module DemoApp.Models {
-    export class BaseModel {
+    export abstract class BaseModel {
         public Id: number;
         public Name: string;
     }

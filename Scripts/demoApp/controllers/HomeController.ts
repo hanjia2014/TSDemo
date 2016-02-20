@@ -26,6 +26,8 @@
         };
 
         addEmployee = () => {
+            //error: cannot create instance of abstract class
+            //var baseModel = new Models.BaseModel;
             var employee = new Models.Employee;
             employee.Name = this.E_Name;
             employee.CompanyId = this.E_CompanyId;
