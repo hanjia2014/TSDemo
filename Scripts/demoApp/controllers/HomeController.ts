@@ -1,7 +1,8 @@
 ﻿module DemoApp.Controllers {
+    import RepositoryService = DemoApp.Services.RepositoryService;
     export class HomeController extends BaseController {
         static $inject = ['$scope', 'DemoApp.Services.RepositoryService', '$q', 'demoAppHub'];
-        constructor(private $scope: DemoApp.Scopes.IHomeScope, private repositoryService: DemoApp.Services.RepositoryService, private $q: ng.IQService, private demoAppHub) {
+        constructor(private $scope: DemoApp.Scopes.IHomeScope, private repositoryService: RepositoryService, private $q: ng.IQService, private demoAppHub) {
             super();
             this.$scope.Message = "Hello from scope";
             this.Message = "Hello from home controller";
