@@ -2,7 +2,7 @@
     export class Company extends BaseModel implements Interfaces.IHasName {
         public Address: string;
         public Employees: Array<Employee>;
-        public getName = () => {
+        public Display = () => {
             return this.Name + " located at " + this.Address;
         };
     }
